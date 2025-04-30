@@ -1,6 +1,25 @@
 body {
-  background-color: #f0f0f0;
+  background-color: #eadbdb;
   font-family: Arial, sans-serif;
+}
+div {
+  background-color: #d34848;
+  padding: 20px;
+  border-radius: 5px;
+}
+.div1 {
+  background-color: #f0e68c;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  
 }
 
 h1 {
