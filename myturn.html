@@ -1,53 +1,122 @@
-<html> 
-    <head>  
-    <style>
-        * {
-  box-sizing: border-box;
-}
-       .left {   
-  float: left;
-  width: 75%;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">Portfolio</div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-/* Right column */
-.right {
-  float: left;
-  width: 25%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
-} 
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        p {
-            text-align: center;
-            color: #666;
-        }
-    </style>
-        <title>My Turn</title>
+  <main>
+    <section id="home">
+  <div class="container two-column">
+    <div class="left">
+      <img src="me.png" alt="My Photo" class="profile-img">
+    </div>
+    <div class="right">
+      <h1>Welcome to my Portfolio</h1>
+      <p class="subText">I'm a Computer Science student passionate about web development, AI, and solving problems with technology.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+    
+  </div>
+</section>
 
-    </head>
-    <body>
-        <h1>My Turn</h1>
-        <p>My turn</p>
-        
-            <div class ="row">   
-                <div class="left">  <h1>My Turn</h1> </div>
-                <div class="right"> <p>My turn</p>  </div>
-            </row>
-        
-    </body>
+
+    <section id="about" aria-labelledby="h-about">
+      <div class="container">
+        <h2 id="h-about">About Me</h2>
+        <p>Short bio — interests, what you’re learning, and what roles you’re targeting.</p>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="h-skills">
+      <div class="container">
+        <h2 id="h-skills">Skills</h2>
+        <p>Languages: Python, JavaScript, C/C++</p>
+        <p>Frameworks/Tools: React, Node.js, Git, SQL</p>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="h-projects">
+      <div class="container">
+        <h2 id="h-projects">Projects</h2>
+        <div class="card">
+          <strong>Project Title</strong>
+          <p>One-liner about what it does and why it’s cool. <a href="#">Live</a> · <a href="#">GitHub</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="h-experience">
+      <div class="container">
+        <h2 id="h-experience">Experience</h2>
+        <p>Internships, research, hackathons, or volunteer work — focus on impact.</p>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="h-education">
+      <div class="container">
+        <h2 id="h-education">Education</h2>
+        <p>BS in Computer Science, School · Graduation Year · Relevant Coursework</p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="h-contact">
+      <div class="container">
+        <h2 id="h-contact">Contact</h2>
+        <p>Email: you@example.com · LinkedIn · GitHub</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name. All rights reserved.
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">▲</button>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight active nav link while scrolling
+    const links = Array.from(document.querySelectorAll('header .nav a[href^="#"]'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = links.find(l => l.getAttribute('href') === `#${entry.target.id}`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach(sec => sec && observer.observe(sec));
+
+    // Back-to-top button logic
+    const toTop = document.getElementById('toTop');
+    const toggleTop = () => {
+      if (window.scrollY > 400) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', toggleTop, { passive: true });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
 </html>
- 
