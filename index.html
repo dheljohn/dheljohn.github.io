@@ -1,9 +1,305 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>My Site</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body>
-    <h1>Upcoming Portfolio Soon!</h1>
+    <div class="nav">
+      <div class="left">
+        <h3>Edhel John</h3>
+      </div>
+      <div class="mid">
+        <ul>
+          <li><a href="#pages" class="nav-link active">All</a></li>
+          <li>
+            <a href="#about" class="nav-link" data-target="about">About</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" data-target="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#cert" class="nav-link" data-target="cert"
+              >Certifications</a
+            >
+          </li>
+          <!-- <li><a href="#">Contact</a></li> -->
+        </ul>
+      </div>
+      <div class="right">
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+    <div class="page" id="pages">
+      <div class="grid-container">
+        <div class="box" style="grid-area: box-1" id="about">
+          <div class="boxAbout">
+            <!-- <img src="asset/ej2.png" alt="Edhel John"> -->
+
+            <div class="header">
+              <h2>
+                <span class="big"></span> <br /><br />
+                Edhel John
+              </h2>
+              <!-- data-content="Hi! I'm Edhel John" -->
+              <!-- <h2 data-content="Hi! I'm Edhel John">Hi! I'm Edhel John</h2> -->
+              <p>Aspiring Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" style="grid-area: box-2" id="projects">
+          <div class="projects">
+            <div class="header">
+              <h2>Projects</h2>
+              <a href="project.html">See All ></a>
+            </div>
+            <a href="project.html">
+              <img
+                src="asset/lp.webp"
+                alt="Landing page project preview"
+                draggable="false"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="box" style="grid-area: box-3" id="cert">
+          <div class="cert">
+            <div class="header">
+              <h2>Certifications</h2>
+            </div>
+            <div class="slider">
+              <!-- style="
+                  --width: 180px;
+                  --height: 150px;
+                  
+                  --quantity: 6; "
+                  >      -->
+              <div class="list">
+                <div class="item" style="--position: 1">
+                  <img src="asset/cert1.webp" alt="" />
+                </div>
+                <div class="item" style="--position: 2">
+                  <img src="asset/cert2.webp" alt="" />
+                </div>
+                <div class="item" style="--position: 3">
+                  <img src="asset/cert3.webp" alt="" />
+                </div>
+                <div class="item" style="--position: 4">
+                  <img src="asset/cert4.webp" alt="" />
+                </div>
+                <div class="item" style="--position: 5">
+                  <img src="asset/cert5.webp" alt="" />
+                </div>
+                <div class="item" style="--position: 6">
+                  <img src="asset/cert6.webp" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" style="grid-area: box-4">
+          <div class="abstract">
+            <!-- <div class="contact">
+                
+                    <div class="logocontainer">
+                    <div class="logo">
+                        <strong>Contact</strong>
+                        <a href="#">tubal.edheljohn@gmail.com</a>
+                    </div>
+                    <div class="logo">
+                        <img src="asset/phonelogo.png" alt="">
+                        <a href="#">tubal.edheljohn@gmail.com</a>
+                    </div>
+                    <div class="logo">
+                        <img src="asset/phonelogo.png" alt="">
+                        <a href="#">tubal.edheljohn@gmail.com</a>
+                    </div>
+                        
+                    </div>
+                    
+                
+                </div> -->
+            <div class="mantra">
+              <h3>Learn.<br />Build.<br />Repeat.</h3>
+            </div>
+            <div class="robot">
+              <!-- <img src="asset/combi.webp" alt=""> -->
+            </div>
+
+            <!-- <img src="asset/combi.webp" alt=""> -->
+            <!-- <img class="metalbg" src="asset/metal.webp" alt=""> -->
+          </div>
+        </div>
+
+        <div class="box" style="grid-area: box-5" id="contact">
+          <div class="contact-grid">
+            <div
+              class="boxnew"
+              style="grid-area: ea"
+              onclick="copyPText(this)"
+              title="Click to copy email"
+            >
+              <i class="fa-regular fa-envelope"></i>
+              <p>tubal.edheljohn@gmail.com</p>
+            </div>
+            <div
+              class="boxnew"
+              style="grid-area: pn"
+              onclick="copyPText(this)"
+              title="Click to copy phone number"
+            >
+              <i class="fa-solid fa-phone"></i>
+              <p>+63 927 870 5356</p>
+            </div>
+            <a
+              class="boxnew"
+              style="grid-area: li"
+              href="https://linkedin.com/in/edheljohn"
+              target="_blank"
+              rel="noopener"
+              title="Visit LinkedIn profile"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a
+              href="https://github.com/dheljohn"
+              class="boxnew"
+              style="grid-area: gh"
+              title="Visit GitHub profile"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <div class="boxnew" style="grid-area: txt">
+              <h3>Let's Connect</h3>
+            </div>
+            <!-- <div class="boxnew" style="grid-area: ln">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="boxnew" style="grid-area: num">
+                    <i class="fa-regular fa-envelope"></i>
+                </div> -->
+          </div>
+          <!-- <h3 class="con">connect with me</h3> -->
+        </div>
+      </div>
+      <div id="snackbar">Copied to clipboard!</div>
+    </div>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+      const boxes = document.querySelectorAll(".box");
+
+      function pulse(el) {
+        el.classList.remove("pulse"); // remove animation class
+        void el.offsetWidth; // force reflow
+        el.classList.add("pulse"); // re-add class → animation restarts
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const hrefAttr = link.getAttribute("href");
+
+          if (hrefAttr.startsWith("#")) {
+            e.preventDefault();
+
+            const href = hrefAttr.substring(1); // remove #
+
+            if (href === "pages") {
+              // "All" link
+              boxes.forEach(pulse); // pulse all boxes
+              // Scroll to top with padding
+              window.scrollTo({ top: 20, behavior: "smooth" });
+            } else {
+              const box = document.getElementById(href);
+              if (box) {
+                pulse(box);
+                // Scroll to element with padding from top
+                const offset = 20; // distance from top
+                const topPos =
+                  box.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: topPos, behavior: "smooth" });
+              }
+            }
+          }
+
+          // Update active class for all links
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      const slider = document.querySelector(".slider");
+
+      let isDown = false;
+      let start;
+      let scrollStart;
+      let isVertical = false;
+
+      function updateDirection() {
+        isVertical = window.innerWidth <= 768;
+      }
+      updateDirection();
+      window.addEventListener("resize", updateDirection);
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        start = isVertical ? e.pageY : e.pageX;
+        scrollStart = isVertical ? slider.scrollTop : slider.scrollLeft;
+      });
+
+      ["mouseup", "mouseleave"].forEach((ev) =>
+        slider.addEventListener(ev, () => (isDown = false))
+      );
+
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+
+        const current = isVertical ? e.pageY : e.pageX;
+        const walk = (current - start) * 1.5;
+
+        if (isVertical) {
+          slider.scrollTop = scrollStart - walk;
+        } else {
+          slider.scrollLeft = scrollStart - walk;
+        }
+      });
+
+      function copyPText(box) {
+        const p = box.querySelector("p");
+        if (!p) return; // nothing to copy if no <p>
+
+        navigator.clipboard
+          .writeText(p.textContent)
+          .then(() => {
+            const snackbar = document.getElementById("snackbar");
+            snackbar.classList.add("show");
+
+            setTimeout(() => {
+              snackbar.classList.remove("show");
+            }, 2000);
+          })
+          .catch((err) => console.error("Failed to copy:", err));
+      }
+    </script>
   </body>
 </html>

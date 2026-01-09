@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="backButton">
+      <a href="index.html">
+        <i class="fa-solid fa-arrow-left"></i>
+        <p>Back to Home</p>
+      </a>
+    </div>
+    <div class="section">
+      <h1>Projects</h1>
+      <p>
+        Here are some of my projects. Click the Github button to view the source
+        code.
+      </p>
+    </div>
+
+    <div class="container">
+      <!-- Box 1 -->
+      <div class="box" style="grid-area: box-1">
+        <div class="boxcontainer">
+          <div class="image">
+            <img
+              src="asset/jc1.webp"
+              alt="Landing page project preview"
+              draggable="false"
+            />
+          </div>
+          <div class="content">
+            <div class="projectNumber">
+              <h2>JustChat</h2>
+              <p class="personal">Personal</p>
+            </div>
+            <p class="descrip">
+              A Flutter-based messaging app with 1-on-1 text chat, Google Auth,
+              real-time Firestore syncing, and push notifications.
+            </p>
+            <div class="footer">
+              <div class="lang">Flutter</div>
+              <div class="lang">Firebase</div>
+              <div class="lang">Dart</div>
+              <div class="lang">Authentication</div>
+            </div>
+            <div class="buttonSec">
+              <a href="https://github.com/dheljohn/JustChat" target="_blank">
+                <i class="fa-brands fa-github"> Github</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="box" style="grid-area: box-2">
+        <div class="boxcontainer">
+          <div class="image">
+            <img
+              src="asset/FaceD1.webp"
+              alt="Landing page project preview"
+              draggable="false"
+            />
+          </div>
+          <div class="content">
+            <div class="projectNumber">
+              <h2>FaceMark</h2>
+              <p>Personal</p>
+            </div>
+            <p class="descrip">
+              Developed a face recognition attendance system using Python,
+              integrating the face-api.js library for facial detection and
+              recognition, and updating Excel logs automatically.
+            </p>
+            <div class="footer">
+              <div class="lang">Python</div>
+              <div class="lang">HTML/CSS</div>
+              <div class="lang">JavaScript</div>
+              <div class="lang">Excel / CSV</div>
+            </div>
+            <div class="buttonSec">
+              <a
+                href="https://github.com/dheljohn/Face-recognition-attendance"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"> Github</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="box" style="grid-area: box-3">
+        <div class="boxcontainer">
+          <div class="image">
+            <img
+              src="asset/somoWebp.webp"
+              alt="Landing page project preview"
+              draggable="false"
+            />
+          </div>
+          <div class="content">
+            <div class="projectNumber">
+              <h2>SoMo</h2>
+              <p>Thesis</p>
+            </div>
+            <p class="descrip">
+              Developed a soil monitoring app with a team, using ESP32 and
+              sensors for real-time data via Wi-Fi and Firebase, enabling live
+              and historical tracking. Primarily handled Flutter app
+              development, UI, and database integration.
+            </p>
+            <div class="footer">
+              <div class="lang">Flutter</div>
+              <div class="lang">Firebase</div>
+              <div class="lang">Dart</div>
+              <div class="lang">Cloud Firestore</div>
+            </div>
+            <div class="buttonSec">
+              <a href="https://github.com/dheljohn/SoMo" target="_blank">
+                <i class="fa-brands fa-github"> Github</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".boxcontainer .image img").forEach((img) => {
+        let isDragging = false;
+        let startX = 0,
+          startY = 0;
+        let offsetX = 0,
+          offsetY = 0;
+        const scale = 3;
+        let width = img.clientWidth;
+        let height = img.clientHeight;
+
+        const getLimits = () => {
+          const container = img.parentElement;
+          const cw = container.clientWidth;
+          const ch = container.clientHeight;
+          const rect = img.getBoundingClientRect();
+          const scaledW = rect.width;
+          const scaledH = rect.height;
+
+          return {
+            maxX: Math.max(0, (scaledW - cw) / 2),
+            maxY: Math.max(0, (scaledH - ch) / 2),
+          };
+        };
+
+        const resetImage = (img) => {
+          // Listen for screen size changes
+          const checkScreen = () => {
+            const scaleValue = window.innerWidth <= 1024 ? 1 : 2.5; // scale 1 for <=1024px
+            img.style.transition = "transform 0.25s ease";
+            img.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
+            img._offsetX = 0;
+            img._offsetY = 0;
+          };
+
+          // Run once on setup
+          checkScreen();
+
+          // Update on window resize
+          window.addEventListener("resize", checkScreen);
+
+          // Prevent dragging
+          img.addEventListener("dragstart", (e) => e.preventDefault());
+        };
+
+        window.addEventListener("resize", () => {
+          document.querySelectorAll(".image img").forEach(resetImage);
+        });
+
+        img.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          img.style.cursor = "grabbing";
+          img.style.transition = "none";
+          startX = e.clientX - offsetX;
+          startY = e.clientY - offsetY;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          const { maxX, maxY } = getLimits();
+          offsetX = e.clientX - startX;
+          offsetY = e.clientY - startY;
+          offsetX = Math.max(-maxX, Math.min(maxX, offsetX));
+          offsetY = Math.max(-maxY, Math.min(maxY, offsetY));
+          img.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px)) scale(${scale})`;
+        });
+
+        document.addEventListener("mouseup", () => {
+          isDragging = false;
+          img.style.cursor = "grab";
+          offsetX = Math.max(
+            -getLimits().maxX,
+            Math.min(getLimits().maxX, offsetX)
+          );
+          offsetY = Math.max(
+            -getLimits().maxY,
+            Math.min(getLimits().maxY, offsetY)
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
