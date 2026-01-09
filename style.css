@@ -472,7 +472,7 @@ background-position: 0 0,25px 25px; */
 background-color: #0d1117;
 opacity: 1;
 background:  
-linear-gradient(to top, black 5%, transparent),
+linear-gradient(to top, black 2%, transparent),
 url("asset/ej2.png")  -45px / cover no-repeat;
 
 
