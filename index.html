@@ -260,28 +260,38 @@
       updateDirection();
       window.addEventListener("resize", updateDirection);
 
+      // --- MOUSE EVENTS (desktop) ---
       slider.addEventListener("mousedown", (e) => {
         isDown = true;
         start = isVertical ? e.pageY : e.pageX;
         scrollStart = isVertical ? slider.scrollTop : slider.scrollLeft;
       });
-
       ["mouseup", "mouseleave"].forEach((ev) =>
         slider.addEventListener(ev, () => (isDown = false))
       );
-
       slider.addEventListener("mousemove", (e) => {
         if (!isDown) return;
         e.preventDefault();
-
         const current = isVertical ? e.pageY : e.pageX;
         const walk = (current - start) * 1.5;
+        if (isVertical) slider.scrollTop = scrollStart - walk;
+        else slider.scrollLeft = scrollStart - walk;
+      });
 
-        if (isVertical) {
-          slider.scrollTop = scrollStart - walk;
-        } else {
-          slider.scrollLeft = scrollStart - walk;
-        }
+      // --- TOUCH EVENTS (mobile) ---
+      slider.addEventListener("touchstart", (e) => {
+        start = isVertical ? e.touches[0].pageY : e.touches[0].pageX;
+        scrollStart = isVertical ? slider.scrollTop : slider.scrollLeft;
+      });
+      slider.addEventListener("touchmove", (e) => {
+        e.preventDefault();
+        const current = isVertical ? e.touches[0].pageY : e.touches[0].pageX;
+        const walk = (current - start) * 1.5;
+        if (isVertical) slider.scrollTop = scrollStart - walk;
+        else slider.scrollLeft = scrollStart - walk;
+      });
+      slider.addEventListener("touchend", () => {
+        // nothing to do here
       });
 
       function copyPText(box) {
