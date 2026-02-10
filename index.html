@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -164,7 +164,7 @@
               title="Click to copy phone number"
             >
               <i class="fa-solid fa-phone"></i>
-              <p>+63 927 870 5356</p>
+              <p>+63 927 647 4805</p>
             </div>
             <a
               class="boxnew"
@@ -267,7 +267,7 @@
         scrollStart = isVertical ? slider.scrollTop : slider.scrollLeft;
       });
       ["mouseup", "mouseleave"].forEach((ev) =>
-        slider.addEventListener(ev, () => (isDown = false))
+        slider.addEventListener(ev, () => (isDown = false)),
       );
       slider.addEventListener("mousemove", (e) => {
         if (!isDown) return;
