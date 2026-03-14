@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,215 +9,119 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <link
+    <linka
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="backButton">
-      <a href="index.html">
-        <i class="fa-solid fa-arrow-left"></i>
-        <p>Back to Home</p>
-      </a>
-    </div>
-    <div class="section">
+    <nav>
+      <a href="index.html"
+        ><i class="fa-solid fa-arrow-left"></i> Back to Home</a
+      >
+    </nav>
+
+    <header>
       <h1>Projects</h1>
       <p>
-        Here are some of my projects. Click the Github button to view the source
-        code.
+        A collection of things I've built. Click GitHub to view the source code.
       </p>
-    </div>
+    </header>
 
-    <div class="container">
-      <!-- Box 1 -->
-      <div class="box" style="grid-area: box-1">
-        <div class="boxcontainer">
-          <div class="image">
-            <img
-              src="asset/jc1.webp"
-              alt="Landing page project preview"
-              draggable="false"
-            />
-          </div>
-          <div class="content">
-            <div class="projectNumber">
-              <h2>JustChat</h2>
-              <p class="personal">Personal</p>
-            </div>
-            <p class="descrip">
-              A Flutter-based messaging app with 1-on-1 text chat, Google Auth,
-              real-time Firestore syncing, and push notifications.
-            </p>
-            <div class="footer">
-              <div class="lang">Flutter</div>
-              <div class="lang">Firebase</div>
-              <div class="lang">Dart</div>
-              <div class="lang">Authentication</div>
-            </div>
-            <div class="buttonSec">
-              <a href="https://github.com/dheljohn/JustChat" target="_blank">
-                <i class="fa-brands fa-github"> Github</i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Box 2 -->
-      <div class="box" style="grid-area: box-2">
-        <div class="boxcontainer">
-          <div class="image">
-            <img
-              src="asset/FaceD1.webp"
-              alt="Landing page project preview"
-              draggable="false"
-            />
-          </div>
-          <div class="content">
-            <div class="projectNumber">
-              <h2>FaceMark</h2>
-              <p>Personal</p>
-            </div>
-            <p class="descrip">
-              Developed a face recognition attendance system using Python,
-              integrating the face-api.js library for facial detection and
-              recognition, and updating Excel logs automatically.
-            </p>
-            <div class="footer">
-              <div class="lang">Python</div>
-              <div class="lang">HTML/CSS</div>
-              <div class="lang">JavaScript</div>
-              <div class="lang">Excel / CSV</div>
-            </div>
-            <div class="buttonSec">
-              <a
-                href="https://github.com/dheljohn/Face-recognition-attendance"
-                target="_blank"
-              >
-                <i class="fa-brands fa-github"> Github</i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Box 3 -->
-      <div class="box" style="grid-area: box-3">
-        <div class="boxcontainer">
-          <div class="image">
-            <img
-              src="asset/somoWebp.webp"
-              alt="Landing page project preview"
-              draggable="false"
-            />
-          </div>
-          <div class="content">
-            <div class="projectNumber">
-              <h2>SoMo</h2>
-              <p>Thesis</p>
-            </div>
-            <p class="descrip">
-              Developed a soil monitoring app with a team, using ESP32 and
-              sensors for real-time data via Wi-Fi and Firebase, enabling live
-              and historical tracking. Primarily handled Flutter app
-              development, UI, and database integration.
-            </p>
-            <div class="footer">
-              <div class="lang">Flutter</div>
-              <div class="lang">Firebase</div>
-              <div class="lang">Dart</div>
-              <div class="lang">Cloud Firestore</div>
-            </div>
-            <div class="buttonSec">
-              <a href="https://github.com/dheljohn/SoMo" target="_blank">
-                <i class="fa-brands fa-github"> Github</i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="grid" id="grid"></div>
 
     <script>
-      document.querySelectorAll(".boxcontainer .image img").forEach((img) => {
-        let isDragging = false;
-        let startX = 0,
-          startY = 0;
-        let offsetX = 0,
-          offsetY = 0;
-        const scale = 3;
-        let width = img.clientWidth;
-        let height = img.clientHeight;
+      const projects = [
+        {
+          title: "JustChat",
+          type: "Personal",
+          desc: "A Flutter-based messaging app with 1-on-1 text chat, Google Auth, real-time Firestore syncing, and push notifications.",
+          image: "asset/jc1.webp",
+          emoji: "💬",
+          tags: ["Flutter", "Firebase", "Dart", "Authentication"],
+          github: "https://github.com/dheljohn/JustChat",
+          demo: "",
+        },
+        {
+          title: "FaceMark",
+          type: "Personal",
+          desc: "Face recognition attendance system using Python and face-api.js for facial detection, updating Excel logs automatically.",
+          image: "asset/FaceD1.webp",
+          emoji: "👤",
+          tags: ["Python", "HTML/CSS", "JavaScript", "Excel / CSV"],
+          github: "https://github.com/dheljohn/Face-recognition-attendance",
+          demo: "",
+        },
+        {
+          title: "SoMo",
+          type: "Thesis",
+          desc: "Soil monitoring app with ESP32 and sensors for real-time data via Wi-Fi and Firebase, enabling live and historical tracking.",
+          image: "asset/somoWebp.webp",
+          emoji: "🌱",
+          tags: ["Flutter", "Firebase", "Dart", "Cloud Firestore"],
+          github: "https://github.com/dheljohn/bantay",
+          demo: "",
+        },
+        {
+          title: "Bantay",
+          type: "Personal",
+          desc: "Soil monitoring app with ESP32 and sensors for real-time data via Wi-Fi and Firebase, enabling live and historical tracking.",
+          image: "asset/bantay.webp",
+          emoji: "🛡",
+          tags: ["Flutter", "Dart"],
+          github: "https://github.com/dheljohn/SoMo",
+          demo: "",
+        },
+      ];
 
-        const getLimits = () => {
-          const container = img.parentElement;
-          const cw = container.clientWidth;
-          const ch = container.clientHeight;
-          const rect = img.getBoundingClientRect();
-          const scaledW = rect.width;
-          const scaledH = rect.height;
+      // Render cards
+      const grid = document.getElementById("grid");
 
-          return {
-            maxX: Math.max(0, (scaledW - cw) / 2),
-            maxY: Math.max(0, (scaledH - ch) / 2),
-          };
-        };
+      projects.forEach((p, i) => {
+        const typeKey = p.type.toLowerCase();
 
-        const resetImage = (img) => {
-          // Listen for screen size changes
-          const checkScreen = () => {
-            const scaleValue = window.innerWidth <= 1024 ? 1 : 2.5; // scale 1 for <=1024px
-            img.style.transition = "transform 0.25s ease";
-            img.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
-            img._offsetX = 0;
-            img._offsetY = 0;
-          };
+        const imgHTML = p.image
+          ? `<img src="${p.image}" alt="${p.title}" />`
+          : `<div class="placeholder">${p.emoji || "📁"}</div>`;
 
-          // Run once on setup
-          checkScreen();
+        const githubBtn = p.github
+          ? `<a class="btn primary" href="${p.github}" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`
+          : "";
 
-          // Update on window resize
-          window.addEventListener("resize", checkScreen);
+        const demoBtn = p.demo
+          ? `<a class="btn" href="${p.demo}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>`
+          : "";
 
-          // Prevent dragging
-          img.addEventListener("dragstart", (e) => e.preventDefault());
-        };
+        const tagsHTML = p.tags
+          .map((t) => `<span class="tag">${t}</span>`)
+          .join("");
 
-        window.addEventListener("resize", () => {
-          document.querySelectorAll(".image img").forEach(resetImage);
-        });
-
-        img.addEventListener("mousedown", (e) => {
-          isDragging = true;
-          img.style.cursor = "grabbing";
-          img.style.transition = "none";
-          startX = e.clientX - offsetX;
-          startY = e.clientY - offsetY;
-        });
-
-        document.addEventListener("mousemove", (e) => {
-          if (!isDragging) return;
-          const { maxX, maxY } = getLimits();
-          offsetX = e.clientX - startX;
-          offsetY = e.clientY - startY;
-          offsetX = Math.max(-maxX, Math.min(maxX, offsetX));
-          offsetY = Math.max(-maxY, Math.min(maxY, offsetY));
-          img.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px)) scale(${scale})`;
-        });
-
-        document.addEventListener("mouseup", () => {
-          isDragging = false;
-          img.style.cursor = "grab";
-          offsetX = Math.max(
-            -getLimits().maxX,
-            Math.min(getLimits().maxX, offsetX)
-          );
-          offsetY = Math.max(
-            -getLimits().maxY,
-            Math.min(getLimits().maxY, offsetY)
-          );
-        });
+        const card = document.createElement("div");
+        card.className = "card";
+        card.style.animationDelay = `${i * 0.08}s`;
+        card.innerHTML = `
+          <div class="card-img">
+            ${imgHTML}
+            <span class="badge ${typeKey}">${p.type}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${p.title}</div>
+            <p class="card-desc">${p.desc}</p>
+            <div class="tags">${tagsHTML}</div>
+          </div>
+          ${githubBtn || demoBtn ? `<div class="card-footer">${githubBtn}${demoBtn}</div>` : ""}
+        `;
+        grid.appendChild(card);
       });
     </script>
   </body>
