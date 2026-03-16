@@ -149,22 +149,25 @@ header p {
   border: 1px solid;
 }
 .badge.personal {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(0, 0, 0, 0.8);
   border-color: #10b981;
   color: #10b981;
 }
 .badge.thesis {
-  background: rgba(139, 92, 246, 0.1);
+  /* background: rgba(139, 92, 246, 0.1); */
+  background: rgba(0, 0, 0, 0.8);
   border-color: #8b5cf6;
   color: #8b5cf6;
 }
 .badge.team {
-  background: rgba(59, 130, 246, 0.1);
+  /* background: rgba(59, 130, 246, 0.1); */
+  background: rgba(0, 0, 0, 0.8);
   border-color: #3b82f6;
   color: #3b82f6;
 }
 .badge.freelance {
-  background: rgba(245, 158, 11, 0.1);
+  /* background: rgba(245, 158, 11, 0.1); */
+  background: rgba(0, 0, 0, 0.8);
   border-color: #f59e0b;
   color: #f59e0b;
 }
