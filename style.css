@@ -88,7 +88,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e
   --font-size-xl: 1.25rem;
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
-
+  --mantra-font-size: clamp(1em, 7vw, 2.5em);
   --fs-body: clamp(0.8em, 1.2vw, 1em);
   --fs-title: clamp(1.2em, 4vw, 1.5em);
   --slider-size: clamp(75px, 35vw, 250px);
@@ -114,17 +114,17 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e
     ),
     radial-gradient(#444cf7 1.1500000000000001px, #e5e5f7 1.1500000000000001px);
 
-  --roboto: "Roboto Mono", monospace;
-
   /* --font-title:  Helvetica, sans-serif;  */
   /* --font-sub: Garamond, serif;  */
 
-  --font-title: Georgia, serif;
-  /* --font-sub: Helvetica, sans-serif; */
-  --font-sub: "Space Grotesk", sans-serif;
-
-  --font-heading: "Syne", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-title: "Orbitron", sans-serif;
+  --font-sub: "Roboto Mono", monospace;
+  --font-size-xxs: 0.65em;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  /* --font-heading: "Syne", sans-serif;
+  --font-body: "Inter", sans-serif; */
 }
 
 @keyframes pulse {
@@ -156,8 +156,11 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e
 }
  */
 
-h2 {
+.header h2 {
   font-size: var(--fs-title);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 2px;
 }
 p {
   font-size: var(--fs-body);
@@ -377,7 +380,7 @@ background-position: 0 0,25px 25px; */
   text-decoration: none;
   font-size: 1em;
   position: relative;
-  font-family: var();
+  font-family: var(--font-sub);
   font-weight: 100;
 }
 
@@ -386,16 +389,18 @@ background-position: 0 0,25px 25px; */
   color: var(--accent-blue);
   text-decoration: none;
   font-family: var(--font-title);
-  font-size: 1em;
-  font-weight: 100;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 .nav .left h3 {
   margin: 0 0.5em;
   color: #ffffff;
   text-decoration: none;
   font-family: var(--font-title);
-  font-size: 1.5em;
-  font-weight: 100;
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  letter-spacing: 5px;
 }
 
 .nav li a:hover,
@@ -484,7 +489,7 @@ background-position: 0 0, 0 0, 19px 33px, 19px 33px, 0 0, 19px 33px; */
   color: white;
   font-family: var(--font-title);
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: var(--font-size-3xl);
   justify-content: center;
   z-index: 1;
 }
@@ -534,7 +539,8 @@ h2 .big {
   font-family: var(--font-title);
   justify-content: flex-end;
   text-align: justify;
-  font-size: 1.1em;
+  font-size: var(--font-size-base);
+  letter-spacing: 2px;
 }
 
 .projects .header {
@@ -590,8 +596,9 @@ h2 .big {
   color: var(--accent-blue);
   text-decoration: none;
   font-family: var(--font-sub);
-  font-size: 0.8em;
-  font-weight: 100;
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 .projects a:hover {
   color: white;
@@ -617,13 +624,20 @@ h2 .big {
 .cert .header h2 {
   top: 15px;
   position: relative;
+  color: white;
+  font-family: var(--font-title);
+  font-weight: 100;
+  font-size: var(--font-size-2xl);
+  letter-spacing: 2px;
+  justify-content: center;
+  z-index: 1;
 }
 
 .slider {
   --width: clamp(120px, 100%, 180px);
   --height: clamp(150px, 100%, 200px);
 
-  --quantity: 6;
+  --quantity: 7;
   width: 100%;
   height: var(--height);
   padding-top: 0.5em;
@@ -759,7 +773,7 @@ h2 .big {
 .boxnew p {
   /* font-family: "Sans Serif", monospace; */
   font-weight: 100;
-  font-size: 12px;
+  font-size: var(--font-size-xxs);
 }
 .boxnew h3 {
   /* font-family: "Sans Serif", monospace; */
@@ -925,38 +939,6 @@ h2 .big {
     width: clamp(150px, 22vw, 520px);
     /* top: clamp(20%, 60%, 70%); */
   }
-  .nav {
-    flex-direction: column;
-    width: 70%;
-    height: 100%;
-  }
-  .nav .right {
-    display: none;
-    visibility: hidden;
-  }
-
-  .nav .mid ul {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 350px;
-    background: var(--box-color);
-    border: 1px solid #1a1a1b;
-    border-radius: 15px;
-    flex-wrap: wrap;
-    z-index: 1;
-    top: 90px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .nav .left h3 {
-    position: relative;
-    left: 1px;
-    font-size: 2em;
-  }
 
   .cert {
     height: 100%;
@@ -1003,19 +985,6 @@ h2 .big {
     height: auto;
   }
 
-  .contact {
-    visibility: hidden;
-  }
-  /* .abstract .metalbg{
-    transform: translate(
-        clamp(20px, 0vw, 0px),
-    clamp(-230px, 0vw, -250px)
-    ) rotate(15deg);
-    top: -220px;
-    width: 150px;
-    height: 500px;
-} */
-
   .abstract img {
     width: auto;
     /* left: 100px; */
@@ -1038,12 +1007,13 @@ h2 .big {
   }
   .nav {
     flex-direction: column;
+    margin-top: 0.5rem;
     width: 100%; /* full width */
     height: auto; /* grow with content */
     padding: 0.5em 1em;
     align-items: center; /* center all items */
     gap: 0.5em;
-    margin-bottom: 3.5em;
+    /* margin-bottom: 3.5em; */
   }
 
   .nav .left h3 {
@@ -1060,11 +1030,12 @@ h2 .big {
 
   .nav .mid ul {
     display: flex;
+    top: 6.6rem;
     flex-wrap: wrap; /* wrap items if needed */
     justify-content: center;
     align-items: center;
     width: 100%; /* full width inside container */
-    max-width: 400px; /* optional max width */
+    max-width: 450px; /* optional max width */
     padding: 0.3em 0.5em;
     margin: 0 auto;
     background: var(--box-color);
@@ -1077,19 +1048,23 @@ h2 .big {
     position: absolute;
     display: flex;
     right: 3%;
-    top: 2%;
-    padding: 0.5em;
-    margin: 0 auto;
+    top: 1rem;
+
+    padding: 0em;
+    margin: 0;
     gap: 0.5em;
+  }
+  .nav .right a {
+    font-size: clamp(0.7em, 1.5vw, 1.5em);
   }
 
   .nav li a,
   .nav .mid li a {
     font-size: clamp(0.8em, 2vw, 1.5em); /* responsive font */
-    padding: 0.3em 0.6em;
+    padding: 0.8em 0.6em;
   }
   .mantra h3 {
-    font-size: clamp(1em, 7vw, 2.5em);
+    font-size: var(--mantra-font-size);
   }
   .contact-grid {
     grid-template-areas:
@@ -1121,28 +1096,19 @@ h2 .big {
   }
 }
 
-/* @media (max-width: 583px){
-    .contact-grid{
-        width: 100%;
-        height: auto;
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        
-        grid-template-areas: 
-            "fb ig"
-            "tw yt"
-            ;
-        ;
-        margin-bottom: 10px;
-    }
-    .contact-grid .boxnew:nth-child(n) {
-        width: 50px;
-        height: 50px;
-    }
-} */
-
 @media (max-width: 480px) {
+  .cert .header h2 {
+    font-size: clamp(0.6rem, 2vw, 1.5em);
+  }
+  .header h2 {
+    font-size: clamp(0.8rem, 2vw, 1.5em);
+  }
+  .projects a {
+    font-size: clamp(0.6rem, 2vw, 1.5em);
+  }
+  .boxnew p {
+    font-size: clamp(0.3rem, 2vw, 1.5em);
+  }
   .nav .mid ul {
     display: flex;
     position: absolute;
@@ -1155,9 +1121,18 @@ h2 .big {
     border-radius: 15px;
     flex-wrap: wrap;
     z-index: 1;
-    top: 90x;
+
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 90%;
+    padding: 0.1em;
+  }
+  .nav {
+    margin-bottom: 3.5em;
+  }
+  .nav .right {
+    top: 1.5em;
+    height: 40px;
   }
   .projects a img {
     width: clamp(120px, 34vw, 520px);
@@ -1177,10 +1152,6 @@ h2 .big {
   .abstract img {
     left: 140px;
   }
-  .nav .mid ul {
-    max-width: 90%; /* use full screen width */
-    padding: 0.1em;
-  }
 
   .nav .left h3 {
     font-size: 1.4em; /* smaller than medium screens */
@@ -1188,7 +1159,7 @@ h2 .big {
 
   .nav li a,
   .nav .mid li a {
-    font-size: 0.9em; /* fit smaller screens */
+    font-size: clamp(0.6em, 2.5vw, 1.5em);
     padding: 0.2em 0.4em;
   }
   .mantra h3 {

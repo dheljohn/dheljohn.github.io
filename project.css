@@ -12,6 +12,7 @@
   --tag-border: #21262d;
   --btn-bg: #161b22;
   --btn-hover: #1f2937;
+  --body-font: "Space Grotesk", sans-serif;
 }
 
 * {
@@ -22,7 +23,7 @@
 
 body {
   background: var(--bg);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--body-font);
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
