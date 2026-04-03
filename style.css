@@ -167,6 +167,8 @@ p {
 body {
   /* background: var(--body-color); */
   background: var(--wave);
+  background-attachment: fixed; /* key fix */
+  background-size: cover;
   color: var(--text-primary);
   min-height: 100dvh;
   display: flex;
