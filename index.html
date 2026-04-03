@@ -20,39 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />  -->
   </head>
   <body>
-    <div class="nav">
-      <div class="left">
-        <h3>EJGT</h3>
-      </div>
-      <div class="mid">
-        <ul>
-          <li><a href="#pages" class="nav-link active">All</a></li>
-          <li>
-            <a href="#about" class="nav-link" data-target="about">About</a>
-          </li>
-          <li>
-            <a href="#projects" class="nav-link" data-target="projects"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a href="#cert" class="nav-link" data-target="cert"
-              >Certifications</a
-            >
-          </li>
-          <!-- <li><a href="#">Contact</a></li> -->
-        </ul>
-      </div>
-      <div class="right">
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-    </div>
     <div class="page" id="pages">
       <div class="grid-container">
         <div class="box" style="grid-area: box-1" id="about">
@@ -219,48 +188,6 @@
     </div>
 
     <script>
-      const navLinks = document.querySelectorAll(".nav-link");
-      const boxes = document.querySelectorAll(".box");
-
-      function pulse(el) {
-        el.classList.remove("pulse"); // remove animation class
-        void el.offsetWidth; // force reflow
-        el.classList.add("pulse"); // re-add class → animation restarts
-      }
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          const hrefAttr = link.getAttribute("href");
-
-          if (hrefAttr.startsWith("#")) {
-            e.preventDefault();
-
-            const href = hrefAttr.substring(1); // remove #
-
-            if (href === "pages") {
-              // "All" link
-              boxes.forEach(pulse); // pulse all boxes
-              // Scroll to top with padding
-              window.scrollTo({ top: 20, behavior: "smooth" });
-            } else {
-              const box = document.getElementById(href);
-              if (box) {
-                pulse(box);
-                // Scroll to element with padding from top
-                const offset = 20; // distance from top
-                const topPos =
-                  box.getBoundingClientRect().top + window.scrollY - offset;
-                window.scrollTo({ top: topPos, behavior: "smooth" });
-              }
-            }
-          }
-
-          // Update active class for all links
-          navLinks.forEach((l) => l.classList.remove("active"));
-          link.classList.add("active");
-        });
-      });
-
       const slider = document.querySelector(".slider");
 
       let isDown = false;
