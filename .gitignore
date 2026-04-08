@@ -1,2 +1,9 @@
 indexV1.html
 styleV1.css
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
