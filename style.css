@@ -122,8 +122,6 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
-  /* --font-heading: "Syne", sans-serif;
-  --font-body: "Inter", sans-serif; */
 }
 
 @keyframes pulse {
@@ -145,16 +143,6 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e
   animation: pulse 0.6s ease-out;
 }
 
-/* .box {
-  transition: transform 0.3s;
-}
-
-.box:target,
-#pages:target .box {
-  animation: pulse 0.6s ease-out;
-}
- */
-
 .header h2 {
   font-size: var(--fs-title);
   font-weight: 600;
@@ -164,6 +152,7 @@ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e
 p {
   font-size: var(--fs-body);
 }
+
 body {
   /* background: var(--body-color); */
   background: var(--wave);
@@ -176,10 +165,6 @@ body {
   justify-content: center;
   flex-direction: column;
   background-color: #090c10;
-  /* opacity: 0.8;
-background-image:  radial-gradient(var(--accent-blue) 1.25px, transparent 1.25px), radial-gradient(#3360b8 1.25px, #090c10 1.25px);
-background-size: 50px 50px;
-background-position: 0 0,25px 25px; */
 }
 
 .box {
@@ -193,28 +178,6 @@ background-position: 0 0,25px 25px; */
   /* background: var(--bg-card); */
 }
 
-/* .box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* height: 2px; */
-/* background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-
-} */
-
-/* .box:hover {
-    background: var(--bg-card-hover);
-    opacity: .9;
-    border-color: var(--accent-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
-    background: var(--waveHover);
-
-} */
 .box:not(:nth-child(5)):hover {
   background: var(--bg-card-hover);
   opacity: 0.9;
@@ -228,47 +191,11 @@ background-position: 0 0,25px 25px; */
   opacity: 1;
 }
 
-/* .grid-container .box:nth-child(n) {
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(139, 92, 246, 0.05) 100%);
-    background-image: radial-gradient( circle farthest-corner at 50% 52.5%,  rgba(14,53,92,1) 0%, rgba(16,14,72,1) 90% );
-    background: url(asset/grain.jpg) ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background: #0d1117; 
-    background: var(--wave);
-    gap: 0.5em;
-    
-
-    
-    border-radius: var(--border-radius);
-    background: var(--box-color);
-    text-decoration: none;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
-    border: 1px solid #1a1a1b;
-    transition: all .3s ease-in-out;
-    
-} */
 .grid-container .box:not(:nth-child(5)) {
-  /* background: linear-gradient(135deg, var(--bg-card) 0%, rgba(139, 92, 246, 0.05) 100%); */
-
-  /* background-image: radial-gradient( circle farthest-corner at 50% 52.5%,  rgba(14,53,92,1) 0%, rgba(16,14,72,1) 90% ); */
-
-  /* background: url(asset/grain.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */
-
-  /* background: #0d1117; */
-  /* background: var(--body-color); */
   background: var(--box-color);
-  /* background: var(--wave); */
 
   border-radius: var(--border-radius);
-  /* gap: 0.5em; */
+
   text-decoration: none;
   color: white;
   font-family: var(--font-title);
@@ -281,10 +208,9 @@ background-position: 0 0,25px 25px; */
 }
 
 .grid-container .box:not(:nth-child(5)):hover {
-  /* background: var(--bg-card-hover); */
   transform: translateY(-2px);
   border: 1px solid var(--accent-blue);
-  /* background: var(--waveHover); */
+
   transition: transform 0.2s ease-in-out;
 }
 
@@ -314,9 +240,6 @@ background-position: 0 0,25px 25px; */
 .grid-container {
   display: grid;
   overflow: hidden;
-  /* min-height: 360px;
-    min-width: 100px; */
-  /* grid-template-columns: 180px 180px 180px 180px 180px; */
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-rows: 200px 200px;
@@ -343,12 +266,6 @@ background-position: 0 0,25px 25px; */
   background:
     linear-gradient(to top, black 2%, transparent),
     url("asset/ej2.png") -45px / cover no-repeat;
-
-  /* background-color: #0d1117;
-opacity: 0.9;
-background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
-background-size: 38px 67px;
-background-position: 0 0, 0 0, 19px 33px, 19px 33px, 0 0, 19px 33px; */
 }
 
 .boxAbout h2 {
@@ -364,15 +281,6 @@ background-position: 0 0, 0 0, 19px 33px, 19px 33px, 0 0, 19px 33px; */
   z-index: 1;
 }
 
-/* .boxAbout h2::before {
-    position: absolute;
-    inset: 0 0 0 0;
-    content: attr(data-content);
-    z-index: 2;
-    -webkit-text-stroke: 2px #d2d2d2 ;
-    color:transparent;
-} */
-
 h2 .big {
   font-size: 2em;
   font-weight: bold;
@@ -381,8 +289,7 @@ h2 .big {
 .boxAbout p {
   color: rgb(253, 253, 253);
   text-decoration: none;
-  font-size: 1em;
-  /* padding: .3em .6em; */
+  font-size: clamp(0.5rem, 3vw, 0.9em);
   transition:
     background-color 0.3s,
     color 0.3s;
@@ -480,15 +387,6 @@ h2 .big {
   height: 100%;
   width: 380px;
   text-align: center;
-  /* justify-content: center;
-    text-align: center;
-    align-items: center; */
-  /* mask-image: linear-gradient(
-        to right, 
-        transparent,
-        #000 100% 0%,
-        transparent,    
-    ); */
 }
 
 .cert .header h2 {
@@ -512,10 +410,6 @@ h2 .big {
   height: var(--height);
   padding-top: 0.5em;
   cursor: grab;
-  /* width: 100%;
-    height: var(--height); */
-  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); */
-  /* border: 1px solid red; */
   overflow: hidden;
   mask-image: linear-gradient(
     to right,
@@ -602,18 +496,6 @@ h2 .big {
     linear-gradient(to top, black 5%, transparent),
     url("asset/combi.webp") 100% 30% / 36% no-repeat;
 }
-/* .abstract .metalbg{
-    transform: translate(20px, -10px); 
-    position: absolute;
-    transform: rotate(15deg);
-    z-index: 0;
-    right: -90px;
-    top: -20px;
-    width: 200px;
-    height: 300px;   
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    overflow: hidden;
-} */
 
 .contact-grid {
   position: relative;
