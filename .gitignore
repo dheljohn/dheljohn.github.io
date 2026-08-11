@@ -7,3 +7,5 @@ styleV1.css
 !.dev.vars.example
 .env*
 !.env.example
+backup/
+.hintrc
