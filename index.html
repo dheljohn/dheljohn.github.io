@@ -160,7 +160,7 @@
     </div>
 
     <script>
-      const slider = document.querySelector(".slider");
+      const slider = document.querySelector('.slider');
 
       let isDown = false;
       let start;
@@ -171,18 +171,18 @@
         isVertical = window.innerWidth <= 768;
       }
       updateDirection();
-      window.addEventListener("resize", updateDirection);
+      window.addEventListener('resize', updateDirection);
 
       // --- MOUSE EVENTS (desktop) ---
-      slider.addEventListener("mousedown", (e) => {
+      slider.addEventListener('mousedown', (e) => {
         isDown = true;
         start = isVertical ? e.pageY : e.pageX;
         scrollStart = isVertical ? slider.scrollTop : slider.scrollLeft;
       });
-      ["mouseup", "mouseleave"].forEach((ev) =>
+      ['mouseup', 'mouseleave'].forEach((ev) =>
         slider.addEventListener(ev, () => (isDown = false)),
       );
-      slider.addEventListener("mousemove", (e) => {
+      slider.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
         const current = isVertical ? e.pageY : e.pageX;
@@ -192,34 +192,34 @@
       });
 
       // --- TOUCH EVENTS (mobile) ---
-      slider.addEventListener("touchstart", (e) => {
+      slider.addEventListener('touchstart', (e) => {
         start = isVertical ? e.touches[0].pageY : e.touches[0].pageX;
         scrollStart = isVertical ? slider.scrollTop : slider.scrollLeft;
       });
-      slider.addEventListener("touchmove", (e) => {
+      slider.addEventListener('touchmove', (e) => {
         e.preventDefault();
         const current = isVertical ? e.touches[0].pageY : e.touches[0].pageX;
         const walk = (current - start) * 1.5;
         if (isVertical) slider.scrollTop = scrollStart - walk;
         else slider.scrollLeft = scrollStart - walk;
       });
-      slider.addEventListener("touchend", () => {});
+      slider.addEventListener('touchend', () => {});
 
       function copyPText(box) {
-        const p = box.querySelector("p");
+        const p = box.querySelector('p');
         if (!p) return;
 
         navigator.clipboard
           .writeText(p.textContent)
           .then(() => {
-            const snackbar = document.getElementById("snackbar");
-            snackbar.classList.add("show");
+            const snackbar = document.getElementById('snackbar');
+            snackbar.classList.add('show');
 
             setTimeout(() => {
-              snackbar.classList.remove("show");
+              snackbar.classList.remove('show');
             }, 2000);
           })
-          .catch((err) => console.error("Failed to copy:", err));
+          .catch((err) => console.error('Failed to copy:', err));
       }
     </script>
     <!--Start of Tawk.to Script-->
@@ -227,12 +227,12 @@
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
       (function () {
-        var s1 = document.createElement("script"),
-          s0 = document.getElementsByTagName("script")[0];
+        var s1 = document.createElement('script'),
+          s0 = document.getElementsByTagName('script')[0];
         s1.async = true;
-        s1.src = "https://embed.tawk.to/69f1a029db9e841c36b06673/1jnbtj8ms";
-        s1.charset = "UTF-8";
-        s1.setAttribute("crossorigin", "*");
+        s1.src = 'https://embed.tawk.to/69f1a029db9e841c36b06673/1jnbtj8ms';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
